@@ -11,7 +11,8 @@ export const Statistics = ({ stats, title }) => {
 
   return (
     <section className={css.statistics}>
-      <h2 className={css.title}>{title}</h2>
+      {/* conditional rendering if the static prop is empty, it'll paint none */}
+      {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.statList}>
         {stats.map(({ id, label, percentage }) => (
